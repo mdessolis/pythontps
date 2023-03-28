@@ -81,6 +81,43 @@ Le variabili stringa sono anche considerate da Python come degli array (di carat
     'Alla' in a # restituisce False('Alla' non si trova nella stringa a, la ricerca è case sensitive)
     for c in a: # esegue un ciclo for memorizzando in c una ad una tutte le lettere presenti in a
     
+ ### Controllo del flusso ###
  
+ #### if ####
+ 
+ Il costrutto if in Python ha la seguente sintassi:
+ 
+    if condizione:
+        # istruzioni per condizione vera
+    else:
+        # istruzioni per condizione falsa
+        
+    if condizione1:
+        # istruzioni per condizione1 vera
+    elif condizione2:
+        # istruzioni per condizione2 vera
+    else:
+        # istruzioni per condizione1 e condizione2 false
+        
+Notare che python riconosce le istruzioni da eseguire nei rami veri e falsi in base all'indentazione, quindi **rispettate rigorosamente l'indentazione**.
+
+A differenza dei linguaggi C-like (C, C++, Java, JS, etc.) non è necessario racchiudere le condizioni all'interno delle parentesi tonde.
+
+#### while ####
+
+Il costrutto while in Python ha la seguente sintassi:
+
+    while condizione:
+        # istruzioni da ripetere
+        
+Non è presente in Python il corrispondente del costrutto do..while
+
+#### for ####
+
+Il ciclo for in Python è uno dei costrutti più usati per la sua grande flessibilità nell'operare con liste, array e tuple:
+
+    for 
+
+    while condizione
     
 
