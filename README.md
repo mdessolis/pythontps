@@ -29,7 +29,7 @@ I commenti su singola riga invece si scrivono preceduti dal carattere hash #
     Questo è un commento in un programma
     """
     
-    # Adesso assegnamo uno string literal alla variabile a
+    # Adesso assegniamo uno string literal alla variabile a
     a = """
     Questa è una stringa
     su più righe assegnata alla variabile a
@@ -53,3 +53,34 @@ Le variabili in Python non hanno necessità di dichiarazione preliminare del tip
     a
     inf # se supera il limite di memorizzazione assegna il valore **inf**
     
+#### Variabili stringa ####
+
+Le variabili stringa in Python sono immutabili, per cui si può assegnare un testo ad una variabile ma non si può modificarne parte ma solo riassegnare un nuovo testo.
+
+    a = "Cuesta è una frase"
+    
+    """
+    L'istruzione seguente restituisce errore, non si può modificare una lettera della stringa.
+    'str' object does not support item assignment
+    """
+    a[0] = "Q" 
+    
+    """
+    Questo è corretto perché riassegniamo l'intera stringa.
+    a[1:] restituisce tutti i caratteri a partire dal secondo (v. liste)
+    """
+    a = "Q" + a[1:] 
+    
+Le variabili stringa sono anche considerate da Python come degli array (di caratteri) per cui possono essere usate come tali e si può accedere ai singoli caratteri con l'indice tra parentesi quadre oppure si possono usare alcuni costrutti di python per estrarre informazioni:
+
+    a = "La donzelletta vien dalla campagna"
+    
+    len(a)      # resituisce 34
+    a[1]        # restituisce 'a'
+    'alla' in a # restituisce True ('alla' si trova dentro la stringa a)
+    'Alla' in a # restituisce False('Alla' non si trova nella stringa a, la ricerca è case sensitive)
+    for c in a: # esegue un ciclo for memorizzando in c una ad una tutte le lettere presenti in a
+    
+ 
+    
+
