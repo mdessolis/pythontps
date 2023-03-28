@@ -116,8 +116,20 @@ Non è presente in Python il corrispondente del costrutto do..while
 
 Il ciclo for in Python è uno dei costrutti più usati per la sua grande flessibilità nell'operare con liste, array e tuple:
 
-    for 
+    for variabile in intervallo:
+        # istruzioni del ciclo
+        
+#### match ####
 
-    while condizione
-    
+Il costrutto match è l'equivalente Python dello switch dei linguaggi C-like, però con alcune flessibilità in più nei case:
 
+    match variabile:
+        case valore1:
+            # istruzioni per variabile==valore1
+            
+        case valore2:
+            # istruzioni per variabile==valore2
+            
+        case _:
+            # istruzioni da eseguire se nessun case precedente va a buon fine
+            
