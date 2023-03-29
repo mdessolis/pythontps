@@ -172,6 +172,7 @@ Sono molto comodi da usare in certi contesti perché semplificano molte operazio
     
     s.pop() # rimuove un elemento dal set. Attenzione, l'elemento rimosso è random
     
+    s = {"Milano", "Bologna", "Roma", "Bologna"}
     s2 = {"Bologna", "Milano", "Catania", "Avellino"}
     
     s.intersection(s2) # restituisce un set composto dall'intersezione di s con s2 - {"Bologna","Catania","Milano"}
