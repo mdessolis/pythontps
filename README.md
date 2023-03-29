@@ -80,12 +80,80 @@ Le variabili stringa sono anche considerate da Python come degli array (di carat
     'alla' in a # restituisce True ('alla' si trova dentro la stringa a)
     'Alla' in a # restituisce False('Alla' non si trova nella stringa a, la ricerca è case sensitive)
     for c in a: # esegue un ciclo for memorizzando in c una ad una tutte le lettere presenti in a
+
+#### Tuple ####
+
+Le tuple sono delle variabili contenenti liste non modificabili di elementi. Questo significa che se vogliamo modificare un elemento della tupla ne dobbiamo creare una nuova con l'elemento modificato. 
+
+E' invece possibile unire due o più tuple tra loro.
+
+Per rappresentare una tupla si indicano gli elementi che la compongono racchiusi tra parentesi tonde.
+
+    a = ("Milano", "Torino", "Bologna")
     
- ### Controllo del flusso ###
+    a += ("Genova",) # aggiunge Genova alla tupla a (attenzione alla virgola finale!)
+    
+    a[0] # restituisce "Milano"
+    
+    len(a) # restituisce 4
+    
+    a = ("Napoli", ) + a[1:] 
+    # ricrea la tupla a sostituendo il primo elemento con "Napoli" al posto di "Milano"
+    # a[1:] restituisce tutti gli elementi a partire da quello di indice 1, quindi salta il primo
+    
+    a.count("Genova") # restituisce il numero di occorrenze di "Genova" all'interno della tupla a
+
+#### Liste ####
+
+Le liste sono simili agli array degli altri linguaggi di programmazione, quindi si usano per memorizzare diversi elementi in una variabile, accessibili mediante indice o iteratori e, a differenza delle tuple, sono modificabili.
+
+    a = ["Milano", "Genova", "Bologna"]
+    
+    a.append("Genova") # aggiunge "Genova" in fondo alla lista
+    
+    a += ["Cagliari", "Bari"] # aggiunge due stringhe in fondo alla lista
+    
+    a[0] # restituisce "Milano"
+    
+    len(a) # restituisce 6
+    
+    a.count("Genova") # restituisce il numero di occorrenze di "Genova" all'interno di a, quindi 2
+    
+    a.sort() # riordina gli elementi della lista
+    
+    print(a) # mostra a video ["Bari", "Bologna", "Cagliari", "Genova", "Genova", "Milano" ]
+
+    a.remove("Genova") # rimuove dalla lista a la prima occorrenza di "Genova" - messaggio di errore se non la trova
+    
+    a.pop(0) # rimuove dalla lista a il primo elemento e lo restituisce
+    
+    a.reverse() # inverte l'ordine degli elementi della lista a
+    
+#### Accedere agli elementi di liste e tuple ###
+
+Una delle potenzialità di Python sta nella semplicità con cui si può accedere a singoli o gruppi di elementi delle liste o delle tuple. A differenza di altri linguaggi che richiedono tra parentesi quadre l'indicazione di un unico indice di accesso, in Python possiamo definire anche degli intervalli di accesso:
+
+    v = [1,3,5,6,7,4,8]
+    
+    v[0] # restituisce 1
+    
+    v[4:] # restituisce [7,4,8] (dall'elemento di indice 4 in poi)
+    
+    v[:3] # restituisce [1,3] (dal primo elemento a quello di indice 3, escluso)
+    
+    v[-1] # restituisce 8, l'ultimo elemento
+    
+    v[:-2] # restituisce tutti gli elementi a parte gli ultimi due
+    
+    v[1:3] # restituisce gli elementi di indice 1 e 2, quindi [3,5]
+    
+
+    
+### Controllo del flusso ###
  
- #### if ####
+#### if ####
  
- Il costrutto if in Python ha la seguente sintassi:
+Il costrutto if in Python ha la seguente sintassi:
  
     if condizione:
         # istruzioni per condizione vera
@@ -207,7 +275,8 @@ Il costrutto match è l'equivalente Python dello switch dei linguaggi C-like, pe
     not in  # verifica se un elemento (o una sequenza) non è presente dentro un altro elemento
     
     Esempio:
-        'alla' in "Balla coi lupi" # restituisce True perché la stringa 'alla' si trova dentro la stringa "Balla coi lupi"
+        'alla' in "Balla coi lupi" 
+        # restituisce True perché la stringa 'alla' si trova dentro la stringa "Balla coi lupi"
         
 Ci sono alcune differenze tra Python e gli altri linguaggi riguardo la composizione delle condizioni. Ad esempio sono corrette le seguenti istruzioni:
 
