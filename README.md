@@ -129,6 +129,8 @@ Le liste sono simili agli array degli altri linguaggi di programmazione, quindi 
     
     a.reverse() # inverte l'ordine degli elementi della lista a
     
+    "Bologna" in a # restituisce True perché la stringa "Bologna" si trova nella lista a
+    
 #### Accedere agli elementi di liste e tuple ###
 
 Una delle potenzialità di Python sta nella semplicità con cui si può accedere a singoli o gruppi di elementi delle liste o delle tuple. A differenza di altri linguaggi che richiedono tra parentesi quadre l'indicazione di un unico indice di accesso, in Python possiamo definire anche degli intervalli di accesso:
@@ -147,7 +149,44 @@ Una delle potenzialità di Python sta nella semplicità con cui si può accedere
     
     v[1:3] # restituisce gli elementi di indice 1 e 2, quindi [3,5]
     
+    v[::2] # restituisce gli elementi di posizione zero e pari [1,5,7,8]
+    
+    v[1::2] # restituisce gli elementi di posizione dispari [3,6,4]
 
+#### Set ####
+
+I set sono degli elenchi di elementi non modificabili e non duplicati. Si rappresentano racchiudendo gli elementi tra parentesi graffe. 
+
+Sono molto comodi da usare in certi contesti perché semplificano molte operazioni che con liste o tuple richiederebbero procedure apposite.
+
+    s = {"Milano", "Bologna", "Roma", "Bologna"}
+    # crea un set di 3 elementi. Il quarto non viene considerato perché già presente
+    
+    len(s) # restituisce il numero di elementi del set s, quindi 3
+    
+    s.add("Napoli") # aggiunge un elemento al set s
+    
+    s.update({"Palermo", "Catania"}) # aggiorna il set s aggiungendo gli elementi del set {"Palermo", "Catania"}
+    
+    s.remove("Catania") # rimuove l'elemento "Catania" dal set s, errore se non lo trova
+    
+    s.pop() # rimuove un elemento dal set. Attenzione, l'elemento rimosso è random
+    
+    s2 = {"Bologna", "Milano", "Catania", "Avellino"}
+    
+    s.intersection(s2) # restituisce un set composto dall'intersezione di s con s2 - {"Bologna","Catania","Milano"}
+    
+    s.union(s2) # restituisce un set composto dall'unione di s con s2 - {"Bologna", "Milano", "Catania", "Avellino", "Roma"}
+    
+    s.difference(s2) # restitusce un set con gli elementi di s non presenti in s2 - {"Roma"}
+    
+    s.issubset(s2) # restituisce True se s è un sottoinsieme di s2
+    
+    s.issuperset(s2) # restituisce True se s2 è un sottoinsieme di s
+    
+    s.isdisjoint(s2) # restituisce True se s e s2 non hanno elementi in comune (intersezione = {})
+    
+    
     
 ### Controllo del flusso ###
  
