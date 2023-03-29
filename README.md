@@ -157,6 +157,8 @@ Una delle potenzialità di Python sta nella semplicità con cui si può accedere
 
 I set sono degli elenchi di elementi non modificabili e non duplicati. Si rappresentano racchiudendo gli elementi tra parentesi graffe. 
 
+Tenere presente che gli elementi sono disposti in ordine casuale quindi non si sa quale sequenza venga restituita in un ciclo di scansione o ad esempio eseguendo il metodo pop() che estrae un elemento a caso.
+
 Sono molto comodi da usare in certi contesti perché semplificano molte operazioni che con liste o tuple richiederebbero procedure apposite.
 
     s = {"Milano", "Bologna", "Roma", "Bologna"}
@@ -175,7 +177,7 @@ Sono molto comodi da usare in certi contesti perché semplificano molte operazio
     s = {"Milano", "Bologna", "Roma", "Bologna"}
     s2 = {"Bologna", "Milano", "Catania", "Avellino"}
     
-    s.intersection(s2) # restituisce un set composto dall'intersezione di s con s2 - {"Bologna","Catania","Milano"}
+    s.intersection(s2) # restituisce un set composto dall'intersezione di s con s2 - {"Bologna","Milano"}
     
     s.union(s2) # restituisce un set composto dall'unione di s con s2 - {"Bologna", "Milano", "Catania", "Avellino", "Roma"}
     
