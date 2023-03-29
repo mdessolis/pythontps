@@ -119,6 +119,44 @@ Il ciclo for in Python è uno dei costrutti più usati per la sua grande flessib
     for variabile in intervallo:
         # istruzioni del ciclo
         
+    # Esempi
+    
+    for i in range(0,10):
+        # assegna alla variabile i i valori da 0 a 9
+        
+    for i in range(-10,10,2):
+        # assegna alla variabile i i valori da -10 a 9 a incrementi di 2
+        
+    for c in "Abracadabra":
+        # assegna alla variabile c tutte le lettere della stringa "Abracadabra"
+        
+    for i in [4,3,8,2,27]:
+        # assegna alla variabile i tutti gli elementi dell'array [4,3,8,2,27]
+        
+    for i in ('alfa', 'beta', 'gamma'):
+        # assegna alla variabile i tutti gli elementi della tupla ('alfa', 'beta', 'gamma')
+        
+    for i in {'alfa', 'beta', 'gamma'}:
+        # assegna alla variabile i tutti gli elementi del set {'alfa', 'beta', 'gamma'}
+        
+    for r in open("file"):
+        # assegna alla variabile r tutte le righe lette dal file "file"
+        
+Un interessante sintassi del ciclo for prevede la presenza dell'else, che viene eseguito a meno che il ciclo non sia stato interrotto con break:
+
+    """
+    Nel seguente esempio cerchiamo il valore x all'interno dell'array v. 
+    Se arriviamo alla fine del ciclo senza aver trovato l'elemento allora mostriamo il messaggio
+    (fare attenzione all'indentazione, else è allineato con for non con if, quindi è parte dell'istruzione for)
+    """
+    for i in v:
+        if i == x:
+            print("Ho trovato x")
+            break;
+    else:
+        print("Non ho trovato x")
+        
+        
 #### match ####
 
 Il costrutto match è l'equivalente Python dello switch dei linguaggi C-like, però con alcune flessibilità in più nei case:
@@ -133,3 +171,63 @@ Il costrutto match è l'equivalente Python dello switch dei linguaggi C-like, pe
         case _:
             # istruzioni da eseguire se nessun case precedente va a buon fine
             
+### Operatori e funzioni di base ###
+
+### Operatori di assegnamento ###
+
+    +   # somma
+    -   # sottrazione
+    *   # moltiplicazione
+    /   # divisione in virgola mobile
+    //  # divisione intera
+    %   # resto della divisione tra interi
+    **  # elevamento a potenza
+    
+    +=  # incremento
+    -=  # diminuzione
+    /=  # partizione (divisione per)
+    *=  # moltiplicazione per
+    
+    A differenza dei linguaggi C-like, non sono presenti gli operatori ++ e --
+    
+### Operatori condizionali ###
+
+    >   # maggiore di
+    <   # minore di
+    ==  # uguale a 
+    >=  # maggiore o uguale a
+    <=  # minore o uguale a
+    !=  # diverso da
+    
+    and # congiunzione logica
+    or  # disgiungione logica
+    not # negazione logica
+    
+    in      # verifica se un elemento (o una sequenza) è presente dentro un altro elemento
+    not in  # verifica se un elemento (o una sequenza) non è presente dentro un altro elemento
+    
+    Esempio:
+        'alla' in "Balla coi lupi" # restituisce True perché la stringa 'alla' si trova dentro la stringa "Balla coi lupi"
+        
+Ci sono alcune differenze tra Python e gli altri linguaggi riguardo la composizione delle condizioni. Ad esempio sono corrette le seguenti istruzioni:
+
+    a < b < c
+        # restituisce True se b è compreso tra a e c
+        
+    4 and 5
+        # restituisce 5 (ultimo elemento vero della condizione)
+        
+    4 or 5
+        # restituisce 4 (primo elemento vero sufficiente a soddisfare tutta la condizione)
+        
+    3 and 4 and False
+        # restituisce False perché tutta la condizione è falsa e l'ultimo risultato è False
+       
+    4 and 7 and a==a
+        # restituisce True perché tutta la condizione è vera e l'ultimo risultato è True
+        
+    a==a and 4 and 7
+        # restituisce 7 perché tutta la condizione è vera e l'ultimo risultato è 7
+    
+    
+    
