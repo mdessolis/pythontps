@@ -184,9 +184,7 @@ Sono molto comodi da usare in certi contesti perché semplificano molte operazio
     
     s.issuperset(s2) # restituisce True se s2 è un sottoinsieme di s
     
-    s.isdisjoint(s2) # restituisce True se s e s2 non hanno elementi in comune (intersezione = {})
-    
-    
+    s.isdisjoint(s2) # restituisce True se s e s2 non hanno elementi in comune (intersezione = {})   
     
 ### Controllo del flusso ###
  
@@ -245,6 +243,7 @@ Il ciclo for in Python è uno dei costrutti più usati per la sua grande flessib
         
     for i in {'alfa', 'beta', 'gamma'}:
         # assegna alla variabile i tutti gli elementi del set {'alfa', 'beta', 'gamma'}
+        # attenzione: l'ordine con cui vengono assegnati gli elementi a i è casuale
         
     for r in open("file"):
         # assegna alla variabile r tutte le righe lette dal file "file"
