@@ -75,7 +75,7 @@ Le variabili stringa sono anche considerate da Python come degli array (di carat
 
     a = "La donzelletta vien dalla campagna"
     
-    len(a)      # resituisce 34
+    len(a)      # restituisce 34
     a[1]        # restituisce 'a'
     'alla' in a # restituisce True ('alla' si trova dentro la stringa a)
     'Alla' in a # restituisce False('Alla' non si trova nella stringa a, la ricerca è case sensitive)
@@ -91,7 +91,7 @@ Per rappresentare una tupla si indicano gli elementi che la compongono racchiusi
 
     a = ("Milano", "Torino", "Bologna")
     
-    a += ("Genova",) # aggiunge Genova alla tupla a (attenzione alla virgola finale!)
+    a += ("Genova",) # aggiunge Genova alla tupla a (attenzione alla virgola finale, se non messa non la considera una tupla!)
     
     a[0] # restituisce "Milano"
     
