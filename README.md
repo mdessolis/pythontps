@@ -100,7 +100,7 @@ Questa modalità consiste nel precedere le virgolette che racchiudono la stringa
     
     s = f"{p:.3f} * {q:.3f} = {p*q:.3f}" # memorizza in s la stringa '15.300 * 12.780 = 195.534'
     
-    
+    s = f"{p:15.3f} * {q:15.3f} = {p*q:15.3f}" # memorizza in s la stringa '         15.300 *          12.780 =         195.534'
     
 #### Tuple ####
 
