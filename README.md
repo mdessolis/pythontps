@@ -211,34 +211,6 @@ Notare che python riconosce le istruzioni da eseguire nei rami veri e falsi in b
 
 A differenza dei linguaggi C-like (C, C++, Java, JS, etc.) non è necessario racchiudere le condizioni all'interno delle parentesi tonde.
 
-#### if inline ####
-
-In python c'è anche l'operatore ternario if che può essere usato per eseguire delle assegnazioni condizionali:
-
-    a = 5
-    b = 7
-    
-    c = a if a>b else b # memorizza in c il massimo tra a e b
-    
-    print("a" if a>b else "b") # stampa "a" se a>b altrimenti stampa "b"
-    
-### Assegnazioni parallele ###
-
-Un'interessante opportunità offerta da Python riguarda la possibilità di definire delle assegnazioni da eseguire "in parallelo" evitando di dover usare delle variabili intermedie:
-
-    a = 4
-    b = 5
-    
-    [a,b] = [b,a] # Scambia il contenuto delle variabili a e b
-    (a,b) = (b,a) # idem
-    a,b = b,a     # idem
-    
-    # Calcolo del massimo comun divisore tra a e b
-    def MCD(a,b): 
-        while b!=0:
-            a, b = b, a % b # assegna alla variabile a il valore di b e a b il valore del resto tra a e b
-        return a
-
 #### while ####
 
 Il costrutto while in Python ha la seguente sintassi:
@@ -367,5 +339,32 @@ Ci sono alcune differenze tra Python e gli altri linguaggi riguardo la composizi
     a==a and 4 and 7
         # restituisce 7 perché tutta la condizione è vera e l'ultimo risultato è 7
     
+#### if inline ####
+
+In python c'è anche l'operatore ternario if che può essere usato per eseguire delle assegnazioni condizionali:
+
+    a = 5
+    b = 7
     
+    c = a if a>b else b # memorizza in c il massimo tra a e b
+    
+    print("a" if a>b else "b") # stampa "a" se a>b altrimenti stampa "b"
+    
+#### Assegnazioni parallele ####
+
+Un'interessante opportunità offerta da Python riguarda la possibilità di definire delle assegnazioni da eseguire "in parallelo" evitando di dover usare delle variabili intermedie:
+
+    a = 4
+    b = 5
+    
+    [a,b] = [b,a] # Scambia il contenuto delle variabili a e b
+    (a,b) = (b,a) # idem
+    a,b = b,a     # idem
+    
+    # Calcolo del massimo comun divisore tra a e b
+    def MCD(a,b): 
+        while b != 0:
+            a, b = b, a % b # assegna alla variabile a il valore di b e a b il valore del resto tra a e b
+        return a
+   
     
