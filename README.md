@@ -81,6 +81,27 @@ Le variabili stringa sono anche considerate da Python come degli array (di carat
     'Alla' in a # restituisce False('Alla' non si trova nella stringa a, la ricerca è case sensitive)
     for c in a: # esegue un ciclo for memorizzando in c una ad una tutte le lettere presenti in a
 
+#### Formatted string ####
+
+Le stringhe possono essere definite anche in modo formattato, cioè con dei codici che consentono l'inserimento di espressioni direttamente all'interno della stringa e del modo in cui devono essere mostrate.
+
+Python offre diversi metodi per la formattazione delle stringhe ma noi ci limiteremo alla modalità definita nelle ultime versioni, in quanto più sintetica da scrivere.
+
+Questa modalità consiste nel precedere le virgolette che racchiudono la stringa con la lettera "f" e inserire le espressioni all'interno di questa tra parentesi graffe:
+
+    p = 15.3
+    q = 12.78
+    
+    s = f"{p} * {q} = {p*q}" # memorizza in s la stringa '15.3 * 12.78 = 195.534'
+    
+    s = f"{p:.1} * {q:.1} = {p*q:.1}" # memorizza in s la stringa '2e+01 * 1e+01 = 2e+02'
+    
+    s = f"{p:.1f} * {q:.1f} = {p*q:.1f}" # memorizza in s la stringa '15.3 * 12.8 = 195.5'
+    
+    s = f"{p:.3f} * {q:.3f} = {p*q:.3f}" # memorizza in s la stringa '15.300 * 12.780 = 195.534'
+    
+    
+    
 #### Tuple ####
 
 Le tuple sono delle variabili contenenti liste non modificabili di elementi. Questo significa che se vogliamo modificare un elemento della tupla ne dobbiamo creare una nuova con l'elemento modificato. 
