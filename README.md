@@ -188,7 +188,33 @@ Sono molto comodi da usare in certi contesti perché semplificano molte operazio
     s.issuperset(s2) # restituisce True se s2 è un sottoinsieme di s
     
     s.isdisjoint(s2) # restituisce True se s e s2 non hanno elementi in comune (intersezione = {})   
+
+#### Dictionary ####
+
+Il tipo Dictionary permette di memorizzare in una variabile delle coppie di elementi chiave:valore, in modo simile quindi all'array associativo del PHP o alle map del C++.
+
+Le liste dictionary vanno dichiarate racchiudendo le coppie all'interno delle parentesi graffe e separando con il carattere ":" la chiave dal valore.
+
+    abitanti = {
+        "Milano": 3500000,
+        "Genova": 850000,
+        "Bologna": 560000
+    }
     
+    abitanti['Bologna'] # restituisce 560000
+    
+    abitanti['Roma'] = 4000000 # aggiunge al dizionario una chiave "Roma" con valore 4000000
+    
+    abitanti.keys() # restituisce una lista con tutte le chiavi memorizzate: ["Bologna", "Genova", "Milano", "Roma"]
+    
+    abitanti.values() # restituisce una lista con tutti i valori memorizzati: [3500000, 850000, 560000, 4000000]
+    
+    abitanti.pop("Roma") # elimina la chiave "Roma" (e anche il suo valore) dal dictionary
+    
+    for k in abitanti.keys(): print(f"{k}: {abitanti[k]}") # stampa tutte le coppie del dictionary
+    
+    for k,v in abitanti.items(): print(f"{k}: {v}") # stampa tutte le coppie del dictionary
+
 ### Controllo del flusso ###
  
 #### if ####
