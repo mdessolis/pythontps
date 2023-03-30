@@ -100,7 +100,30 @@ Questa modalità consiste nel precedere le virgolette che racchiudono la stringa
     
     s = f"{p:.3f} * {q:.3f} = {p*q:.3f}" # memorizza in s la stringa '15.300 * 12.780 = 195.534'
     
-    s = f"{p:15.3f} * {q:15.3f} = {p*q:15.3f}" # memorizza in s la stringa '         15.300 *          12.780 =         195.534'
+    s = f"{p:15.3f} * {q:15.3f} = {p*q:15.3f}" 
+    # memorizza in s la stringa '         15.300 *          12.780 =         195.534'
+    
+    f"{q:-^15}
+    # crea una stringa di 15 caratteri con al centro il valore di q e riempita non di spazi ma di "-": '-----12.78-----'
+    
+    f"{q:^15.4f}"
+    # crea una stringa di 15 caratteri con al centro il valore di q 
+    # e spazi vuoti a destra e sinistra: '    12.7800    '
+    
+    f"{q:15.4f}"
+    # crea una stringa di 15 caratteri con a destra il valore di q con 4 cifre decimali, 
+    # a sinistra spazi: '        12.7800'
+    
+    a = 1500000
+    f"{a:,}" # inserisce il separatore delle migliaia e restituisce '1,500,000'
+    
+    x = 0.3532
+    f"{x:.2%}" # restituisce x in formato percentuale: '35.32%'
+    
+    t = 4
+    f"{t:0>5}" # riempie di zeri non significativi e restituisce '00004'
+    
+    f"{t:0>5b}"# riempie di zeri non significativi e restituisce in binario: '00100'
     
 #### Tuple ####
 
