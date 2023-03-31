@@ -1,5 +1,22 @@
 # Python for TPS
 
+## Sommario ##
+
+[Introduzione](#introduzione)
+[Principi del linguaggio](#principi-del-linguaggio)
+   [Commenti](#commenti)
+   [Variabili](#variabili)
+      [Variabili numeriche](#variabili-numeriche)
+      [Variabili stringa](#variabili-stringa)
+      [Formatted string](#formatted-string)
+      [Tuple](#tuple)
+      [Liste](#liste)
+      [Accedere agli elementi di liste e tuple](#accedere-agli-elementi-di-liste-e-tuple)
+      [Set](#set)
+      [Dictionary](#dictionary)
+   [Controllo del flusso](#controllo-del-flusso)
+   
+
 ## Introduzione
 
 Il linguaggio Python si è imposto negli ultimi anni per una notevole flessibilità nelle istruzioni e per una sempre più crescente disponibilità di librerie di ausilio alle problematiche più disparate, dalla matematica all'AI alla analisi delle reti.
@@ -175,7 +192,7 @@ Le liste sono simili agli array degli altri linguaggi di programmazione, quindi 
     
     "Bologna" in a # restituisce True perché la stringa "Bologna" si trova nella lista a
     
-#### Accedere agli elementi di liste e tuple ###
+#### Accedere agli elementi di liste e tuple ####
 
 Una delle potenzialità di Python sta nella semplicità con cui si può accedere a singoli o gruppi di elementi delle liste o delle tuple. A differenza di altri linguaggi che richiedono tra parentesi quadre l'indicazione di un unico indice di accesso, in Python possiamo definire anche degli intervalli di accesso:
 
