@@ -15,6 +15,16 @@
       - [Set](#set)
       - [Dictionary](#dictionary)
    - [Controllo del flusso](#controllo-del-flusso)
+      - [if](#if)
+      - [while](#while)
+      - [for](#for)
+      - [List comprehension](#list-comprehension)
+      - [match](#match)
+   - [Operatori e funzioni di base](#operatori-e-funzioni-di-base)
+      - [Operatori di assegnamento](#operatori-di-assegnamento)
+      - [Operatori condizionali](#operatori-condizionali) 
+      - [if inline](#if-inline)
+      - [Assegnazioni parallele](#assegnazioni-parallele)
    
 
 ## Introduzione
@@ -414,7 +424,7 @@ Il costrutto match è l'equivalente Python dello switch dei linguaggi C-like, pe
             
 ### Operatori e funzioni di base ###
 
-### Operatori di assegnamento ###
+#### Operatori di assegnamento ####
 
     +   # somma
     -   # sottrazione
@@ -431,7 +441,7 @@ Il costrutto match è l'equivalente Python dello switch dei linguaggi C-like, pe
     
     A differenza dei linguaggi C-like, non sono presenti gli operatori ++ e --
     
-### Operatori condizionali ###
+#### Operatori condizionali ####
 
     >   # maggiore di
     <   # minore di
