@@ -2,19 +2,19 @@
 
 ## Sommario ##
 
-[Introduzione](#introduzione)
-[Principi del linguaggio](#principi-del-linguaggio)
-   [Commenti](#commenti)
-   [Variabili](#variabili)
-      [Variabili numeriche](#variabili-numeriche)
-      [Variabili stringa](#variabili-stringa)
-      [Formatted string](#formatted-string)
-      [Tuple](#tuple)
-      [Liste](#liste)
-      [Accedere agli elementi di liste e tuple](#accedere-agli-elementi-di-liste-e-tuple)
-      [Set](#set)
-      [Dictionary](#dictionary)
-   [Controllo del flusso](#controllo-del-flusso)
+- [Introduzione](#introduzione)
+- [Principi del linguaggio](#principi-del-linguaggio)
+   - [Commenti](#commenti)
+   - [Variabili](#variabili)
+      - [Variabili numeriche](#variabili-numeriche)
+      - [Variabili stringa](#variabili-stringa)
+      - [Formatted string](#formatted-string)
+      - [Tuple](#tuple)
+      - [Liste](#liste)
+      - [Accedere agli elementi di liste e tuple](#accedere-agli-elementi-di-liste-e-tuple)
+      - [Set](#set)
+      - [Dictionary](#dictionary)
+   - [Controllo del flusso](#controllo-del-flusso)
    
 
 ## Introduzione
