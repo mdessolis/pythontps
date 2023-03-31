@@ -362,6 +362,8 @@ Alcuni esempi:
     a = -5
     b = 5
     p = 0.5
+    # la seguente istruzione genera una lista con tutte le coppie (x,f(x)) per ogni x
+    # appartenente all'intervallo [a,b] con intervalli di p tra le varie x
     t = [(x,f(x)) for x in numpy.arange(a,b+.1,p)]
     
     # risultato:
