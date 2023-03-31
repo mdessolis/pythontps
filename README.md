@@ -335,7 +335,50 @@ Un interessante sintassi del ciclo for prevede la presenza dell'else, che viene 
     else:
         print("Non ho trovato x")
         
-        
+#### List comprehension ####
+
+Il ciclo for può essere usato anche per generare delle tuple, liste, set o dictionary in modo simile a come si definiscono gli insiemi in matematica.
+
+Ad esempio in matematica si può definire un insieme con la seguente definizione:
+
+![image](https://user-images.githubusercontent.com/100513972/229029916-2b1e8f81-b887-464b-a05c-ae649cb6239f.png)
+
+Questa definizione dice che l'insieme è composto da tutti i valori 2*x con x appartenente all'insieme dei naturali e che soddisfi il criterio x^2>3.
+
+In Python possiamo scrivere una definizione simile tutta con un'unica istruzione. 
+
+Alcuni esempi:
+
+    # insieme dei valori 2x con x appartenente all'intervallo 0-100 e x^2>3
+    x = {2*x for x in range(100) if x*x>3}
+    
+    # Punti di coordinate di una funzione f(x) nell'intervallo [a,b] con passo p
+    # per generare l'intervallo non usiamo range ma numpy.arange perché range lavora solo con interi
+    import numpy 
+    
+    def f(x):
+        return x*x
+    
+    a = -5
+    b = 5
+    p = 0.5
+    t = [(x,f(x)) for x in numpy.arange(a,b+.1,p)]
+    
+    # risultato:
+    # [(-5.0, 25.0), (-4.5, 20.25), (-4.0, 16.0), (-3.5, 12.25), (-3.0, 9.0),
+    #  (-2.5, 6.25), (-2.0, 4.0), (-1.5, 2.25), (-1.0, 1.0), (-0.5, 0.25),
+    #  (0.0, 0.0), (0.5, 0.25), (1.0, 1.0), (1.5, 2.25), (2.0, 4.0), 
+    #  (2.5, 6.25), (3.0, 9.0), (3.5, 12.25), (4.0, 16.0), (4.5, 20.25)]
+    
+    s = "abracadabra"
+    
+    # elenco delle lettere di s che siano minori di 'd'
+    tupla1 = (c for c in s if c < 'd') # crea la tupla ('a','b','a','c','a','a','b','a')
+    lista1 = [c for c in s if c < 'd'] # crea la lista ['a', 'b', 'a', 'c', 'a', 'a', 'b', 'a']
+    set1   = {c for c in s if c < 'd'} # crea il set   {'b', 'a', 'c'}
+    dict1  = {c:ord(c) for c in s if c<'d'} # crea il dictionary {'a': 97, 'b': 98, 'c': 99}
+    
+
 #### match ####
 
 Il costrutto match è l'equivalente Python dello switch dei linguaggi C-like, però con alcune flessibilità in più nei case:
