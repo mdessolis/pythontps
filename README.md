@@ -131,7 +131,8 @@ Questa modalità consiste nel precedere le virgolette che racchiudono la stringa
     # memorizza in s la stringa '         15.300 *          12.780 =         195.534'
     
     f"{q:-^15}
-    # crea una stringa di 15 caratteri con al centro il valore di q e riempita non di spazi ma di "-": '-----12.78-----'
+    # crea una stringa di 15 caratteri con al centro il valore di q 
+    # e riempita non di spazi ma di "-": '-----12.78-----'
     
     f"{q:^15.4f}"
     # crea una stringa di 15 caratteri con al centro il valore di q 
@@ -162,7 +163,8 @@ Per rappresentare una tupla si indicano gli elementi che la compongono racchiusi
 
     a = ("Milano", "Torino", "Bologna")
     
-    a += ("Genova",) # aggiunge Genova alla tupla a (attenzione alla virgola finale, se non messa non la considera una tupla!)
+    a += ("Genova",) # aggiunge Genova alla tupla a (attenzione alla virgola finale, 
+                     # se non messa non la considera una tupla!)
     
     a[0] # restituisce "Milano"
     
