@@ -515,13 +515,13 @@ Un'interessante opportunità offerta da Python riguarda la possibilità di defin
 
 Le funzioni in Python si descrivono con l'operatore def:
 
-   def massimo(a,b):
+    def massimo(a,b):
       return a if a>b else b
-      
-   def print_nominativo(nome, cognome):
+
+    def print_nominativo(nome, cognome):
       print(nome, ' ', cognome)
-      
-   def niente():
+
+    def niente():
       pass # l'operatore pass è obbligatorio quando una funzione è vuota
       
 Gli argomenti della funzione possono essere anche impostati con valori di default e possono anche essere richiamati per nome, evitando di dover rispettare sempre il loro ordine posizionale:
