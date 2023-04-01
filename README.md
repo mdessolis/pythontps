@@ -25,7 +25,7 @@
       - [Operatori condizionali](#operatori-condizionali) 
       - [if inline](#if-inline)
       - [Assegnazioni parallele](#assegnazioni-parallele)
-   
+   - [Funzioni](#funzioni)
 
 ## Introduzione
 
