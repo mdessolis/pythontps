@@ -563,8 +563,8 @@ Se in una funzione abbiamo necessità di accedere ad una variabile esterna, biso
     find_primes(range(11,20)) # stampa 11 13 17 19 e memorizza in count_primes il valore 8
     
     """
-    tenere presente che in questo esempio la stessa operazione si potrebbe risolvere senza accedere ad una variabile globale ma facendo 
-    restituire il conteggio alla funzione.
+    tenere presente che in questo esempio la stessa operazione si potrebbe risolvere senza accedere 
+    ad una variabile globale ma facendo restituire il conteggio alla funzione.
     Ci sono però casi, come nella gestione multi-thread, in cui è più comodo lavorare su variabili globali
     """
     count_primes = 0
