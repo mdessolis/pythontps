@@ -80,6 +80,16 @@ Le variabili in Python non hanno necessità di dichiarazione preliminare del tip
     a
     inf # se supera il limite di memorizzazione assegna il valore **inf**
     
+E' bene precisare che le variabili hanno un comportamento differente rispetto ad altri linguaggi. Le variabili int, float (e così anche string) sono immutabili ed una assegnazione di un valore ad una variabile consiste nella creazione di un oggetto di un certo tipo e associazione di un nome all'oggetto. Se però si assegna un nuovo valore alla variabile non viene modificato l'oggetto ma ne viene creato uno nuovo.
+
+Una prova di questo la possiamo avere usando la funzione id(variabile) che restituisce un intero identificatore univoco di una variabile:
+
+    a = 5
+    id(a) # mostra 140713457410984, ha creato un oggetto int e associato il nome a
+    
+    a += 1
+    id(a) # mostra 140713457411016, è un oggetto int differente con associato il nome a
+
 #### Variabili stringa ####
 
 Le variabili stringa in Python sono immutabili, per cui si può assegnare un testo ad una variabile ma non si può modificarne parte ma solo riassegnare un nuovo testo.
