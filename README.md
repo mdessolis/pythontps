@@ -537,7 +537,7 @@ Gli argomenti della funzione possono essere anche impostati con valori di defaul
    
 E' anche possibile definire funzioni con un numero arbitrario di parametri, inserendo un asterisco prima del nome del parametro. Questo sarà interpretato come una tupla e quindi i valori potranno essere letti con un normale ciclo:
 
-   def somma_quadrati(*numeri):
+   def somma_quadrati(\*numeri):
       sommma = 0
       for x in numeri:
          somma += x*x
