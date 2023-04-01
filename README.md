@@ -545,5 +545,6 @@ E' anche possibile definire funzioni con un numero arbitrario di parametri, inse
       
    somma_quadrati(1,2,3) # restituisce 14 = 1^2 + 2^2 + 3^3
    
+   
 Le funzioni in Python non accettano l'overload, quindi non è possibile definire più funzioni con lo stesso nome ma differenti tipi o numero di parametri.
 
