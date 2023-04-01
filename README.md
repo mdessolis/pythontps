@@ -526,24 +526,24 @@ Le funzioni in Python si descrivono con l'operatore def:
       
 Gli argomenti della funzione possono essere anche impostati con valori di default e possono anche essere richiamati per nome, evitando di dover rispettare sempre il loro ordine posizionale:
 
-   def intervallo_chiuso(a=0, b=10):
+    def intervallo_chiuso(a=0, b=10):
       return range(a,b+1)
-      
-   intervallo_chiuso() # restituisce range(0,11)
-   
-   intervallo_chiuso(5) # restituisce range(5,11)
-   
-   intervallo_chiuso(b=6) # restituisce range(0,7)
+
+    intervallo_chiuso() # restituisce range(0,11)
+
+    intervallo_chiuso(5) # restituisce range(5,11)
+
+    intervallo_chiuso(b=6) # restituisce range(0,7)
    
 E' anche possibile definire funzioni con un numero arbitrario di parametri, inserendo un asterisco prima del nome del parametro. Questo sarà interpretato come una tupla e quindi i valori potranno essere letti con un normale ciclo:
 
-   def somma_quadrati(\*numeri):
+    def somma_quadrati(\*numeri):
       sommma = 0
       for x in numeri:
          somma += x*x
       return somma
-      
-   somma_quadrati(1,2,3) # restituisce 14 = 1^2 + 2^2 + 3^3
+
+    somma_quadrati(1,2,3) # restituisce 14 = 1^2 + 2^2 + 3^3
    
    
 Le funzioni in Python non accettano l'overload, quindi non è possibile definire più funzioni con lo stesso nome ma differenti tipi o numero di parametri.
