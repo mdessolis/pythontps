@@ -548,3 +548,35 @@ E' anche possibile definire funzioni con un numero arbitrario di parametri, inse
    
 Le funzioni in Python non accettano l'overload, quindi non è possibile definire più funzioni con lo stesso nome ma differenti tipi o numero di parametri.
 
+Se in una funzione abbiamo necessità di accedere ad una variabile esterna, bisogna dichiararla esplicitamente con l'operatore global:
+
+    count_primes = 0
+
+    def find_primes(interval):
+      global count_primes
+      for n in interval:
+         if is_prime(n):
+            print(n)
+            count_primes += 1
+            
+    find_primes(range(10)) # stampa 2 3 5 7 e memorizza in count_primes il valore 4
+    find_primes(range(11,20)) # stampa 11 13 17 19 e memorizza in count_primes il valore 8
+    
+    """
+    tenere presente che in questo esempio la stessa operazione si potrebbe risolvere senza accedere ad una variabile globale ma facendo 
+    restituire il conteggio alla funzione.
+    Ci sono però casi, come nella gestione multi-thread, in cui è più comodo lavorare su variabili globali
+    """
+    count_primes = 0
+
+    def find_primes(interval):
+        count = 0
+        for n in interval:
+            if is_prime(n):
+                print(n)
+                count += 1
+        return count
+        
+    count_primes += find_primes(range(10)) # stampa 2 3 5 7 e memorizza in count_primes il valore 4
+    count_primes += find_primes(range(11,20)) # stampa 11 13 17 19 e memorizza in count_primes il valore 8
+
