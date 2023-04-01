@@ -86,9 +86,15 @@ Una prova di questo la possiamo avere usando la funzione id(variabile) che resti
 
     a = 5
     id(a) # mostra 140713457410984, ha creato un oggetto int e associato il nome a
+    id(5) # mostra 140713457410984
     
     a += 1
     id(a) # mostra 140713457411016, è un oggetto int differente con associato il nome a
+    id(6) # mostra 140713457411016
+    
+    b = 6
+    id(b) # mostra 140713457411016
+    
 
 #### Variabili stringa ####
 
