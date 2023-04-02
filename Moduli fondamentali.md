@@ -4,6 +4,8 @@ Uno dei grandi punti di forza di Python è nella disponibilità di un grande num
 
 Qui riportiamo quelle fondamentali all'insegnamento della disciplina TPS e allo svolgimento degli esercizi.
 
+Un elenco più completo lo si può trovare su https://docs.python.org/3.11/library/index.html.
+
 Ricordiamo che per importare un modulo in python bisogna usare l'istruzione import in una delle sue forme:
 
 La sola clausola import mette a disposizione tutte le funzioni interne al modulo, ma per accedere ad una delle funzioni bisogna sempre precederne il nome con il nome del modulo seguito dal punto.
