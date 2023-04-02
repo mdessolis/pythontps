@@ -677,23 +677,60 @@ any(iterable) restituisce True se almeno un elemento dell'argomento è True.
     all(primi) # restituisce False - non sono tutti primi
     any(primi) # restituisce True - c'è almeno un indice primo
     
- #### bin(x), hex(x), oct(x) ####
+#### bin(x), hex(x), oct(x) ####
  
- bin(x) restituisce una stringa con il valore di x in formato binario
- hex(x) restituisce una stringa con il valore di x in formato esadecimale
- oct(x) restituisce una stringa con il valore di x in formato ottale
+bin(x) restituisce una stringa con il valore di x in formato binario
+hex(x) restituisce una stringa con il valore di x in formato esadecimale
+oct(x) restituisce una stringa con il valore di x in formato ottale
  
     bin(7)   # restituisce '0b111'
     hex(32)  # restituisce '0x20'
+ 
+#### chr(x), ord(x) ####
+ 
+chr(x) restituisce la stringa corrispondente al codice Unicode x
+ord(x) restituisce il codice Unicode della stringa x 
+ 
+    chr(65)   # restituisce 'A'
+    chr(8364) # restituisce '€'
     
- #### id(x) e type(x) ####
+    ord("A")  # restituisce 65
+    ord("€")  # restituisce 8364
+
+#### dir(), dir(x) ####
+
+Restituisce un elenco dei nomi del corrente namespace, quindi l'elenco delle variabili e funzioni disponibili.
+Se usato con un parametro, restituisce l'elenco degli attributi dell'oggetto parametro.
+
+    s = "testo"
+    
+    dir(s)
+    ['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isascii', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'removeprefix', 'removesuffix', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+
+#### enumerate(iterable) ####
+
+enumerate(x) restituisce un oggetto di tipo enumerate partendo dalla sequenza x. Si usa generalmente per generare i cicli di lettura su collection.
+
+    abitanti = {
+        "Milano": 2000000,
+        "Genova": 700000,
+        "Napoli": 1200000
+    }
+    
+    abitanti # mostra {'Milano': 2000000, 'Genova': 700000, 'Napoli': 1200000}
+    
+    list(abitanti) # mostra ['Milano', 'Genova', 'Napoli']
+    
+    list(enumerate(abitanti)) # mostra [(0, 'Milano'), (1, 'Genova'), (2, 'Napoli')]
+    
+#### id(x) e type(x) ####
  
- id(x) restituisce un numero intero identificativo univoco di un oggetto. Controllare gli esempi di [Variabili numeriche](#variabili-numeriche) per chiarirne l'uso.
- type(x) restituisce un oggetto con indicato il tipo di dato associato a x
+id(x) restituisce un numero intero identificativo univoco di un oggetto. Controllare gli esempi di [Variabili numeriche](#variabili-numeriche) per chiarirne l'uso.
+type(x) restituisce un oggetto con indicato il tipo di dato associato a x
  
- #### input(prompt) ####
+#### input(prompt) ####
  
- input(prompt) è la classica funzione di Python per gestire l'input a riga di comando. Il risultato è di tipo string, quindi procedere ad opportune conversioni nel caso si debba lavorare con altri tipi di dati.
+input(prompt) è la classica funzione di Python per gestire l'input a riga di comando. Il risultato è di tipo string, quindi procedere ad opportune conversioni nel caso si debba lavorare con altri tipi di dati.
  
     x = input("Inserisci un numero: ")
     x = int(x)
