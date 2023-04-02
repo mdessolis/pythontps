@@ -850,7 +850,7 @@ sorted(iterable, key=None, reverse=False) restituisce l'iterable con gli element
     
 #### zip(*iterables) ####
 
-zip(\*iterables) produce un iteratore generando tante tuple composte di elementi presenti in ciascun elenco passato. Può essere utile quando si vogliono creare dei cicli su più liste in parallelo.
+`zip(*iterables)` produce un iteratore generando tante tuple composte di elementi presenti in ciascun elenco passato. Può essere utile quando si vogliono creare dei cicli su più liste in parallelo.
 
     citta = ['BO', 'MI', 'NA']
     abitanti = [650000, 2000000, 1200000]
