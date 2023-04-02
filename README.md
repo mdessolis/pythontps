@@ -26,6 +26,7 @@
       - [if inline](#if-inline)
       - [Assegnazioni parallele](#assegnazioni-parallele)
    - [Funzioni](#funzioni)
+      - [Passaggio di argomenti per riferimento o per valore](#passaggio-di-argomenti-per-riferimento-o-per-valore)
 
 ## Introduzione
 
