@@ -635,3 +635,79 @@ Se si ha necessità di accedere per riferimento ad una variabile immutabile una 
     x = [5, 10] # 5 è il numero da incrementare, 10 è il limite
     increment(x)
     print(x) # mostrerà [6, 10]
+
+### Built-in Functions ###
+
+Python mette a disposizione alcune funzioni di base che possono essere applicate a differenti tipi di dati e utilissime in diversi contesti di programmazione.
+
+Di seguito l'elenco completo e una spiegazione delle più importanti:
+
+<img width="436" alt="image" src="https://user-images.githubusercontent.com/100513972/229367992-2f7e10b9-e3e4-4100-b911-c592ca81510f.png">
+
+#### abs ####
+
+Restituisce il valore assoluto di un numero.
+
+    x = 4
+    y = 5
+    z = abs(x-y) # restituisce 1
+
+#### all(iterable) e any(iterable) ####
+
+all(iterable) restituisce True se tutti gli elementi dell'argomento sono True.
+any(iterable) restituisce True se almeno un elemento dell'argomento è True.
+
+    """
+    is_prime restituisce True se x è primo, False altrimenti
+    """
+    def is_prime(x):
+    if x<2:
+        return False
+    i=2
+    while i*i<=x:
+        if x%i==0:
+            return False
+        i +=1
+    return True
+
+    # Creiamo una lista con un valore bool per indicare se ciascun indice è primo o meno
+    primi = list(is_prime(x) for x in range(100))
+    
+    all(primi) # restituisce False - non sono tutti primi
+    any(primi) # restituisce True - c'è almeno un indice primo
+    
+ #### bin(x), hex(x), oct(x) ####
+ 
+ bin(x) restituisce una stringa con il valore di x in formato binario
+ hex(x) restituisce una stringa con il valore di x in formato esadecimale
+ oct(x) restituisce una stringa con il valore di x in formato ottale
+ 
+    bin(7)   # restituisce '0b111'
+    hex(32)  # restituisce '0x20'
+    
+ #### id(x) e type(x) ####
+ 
+ id(x) restituisce un numero intero identificativo univoco di un oggetto. Controllare gli esempi di [Variabili numeriche](#variabili-numeriche) per chiarirne l'uso.
+ type(x) restituisce un oggetto con indicato il tipo di dato associato a x
+ 
+ #### input(prompt) ####
+ 
+ input(prompt) è la classica funzione di Python per gestire l'input a riga di comando. Il risultato è di tipo string, quindi procedere ad opportune conversioni nel caso si debba lavorare con altri tipi di dati.
+ 
+    x = input("Inserisci un numero: ")
+    x = int(x)
+    
+    print("é primo" if is_prime(x) else "non è primo")
+    
+#### int(x), float(x) ####
+
+int(x) restituisce un valore intero estratto dalla stringa x. x deve contenere un numero intero, altrimenti si crea un'eccezione.
+float(x) restituisce un valore float estratto dalla stringa x. x deve contenere un numero float, altrimenti si crea un'eccezione.
+
+    int("4")   # restituisce 4
+    int("4.5") # restituisce errore
+    int("4 5") # restituisce errore
+    
+    float("4.5") # restituisce 4.5
+    float("4 5") # restituisce errore
+    
