@@ -6,22 +6,19 @@ Qui riportiamo quelle fondamentali all'insegnamento della disciplina TPS e allo 
 
 Ricordiamo che per importare un modulo in python bisogna usare l'istruzione import in una delle sue forme:
 
--   La sola clausola import mette a disposizione tutte le funzioni interne al modulo,
-    ma per accedere ad una delle funzioni bisogna sempre precederne il nome con il nome
-    del modulo seguito dal punto.
+- La sola clausola import mette a disposizione tutte le funzioni interne al modulo, ma per accedere ad una delle funzioni bisogna sempre precederne il nome con il nome del modulo seguito dal punto.
     
     import numpy 
     
     print(numpy.arange(0,1,0.2)) # genera una sequenza da 0 a 1 escluso a intervalli di 0.2
     
--   Se si ha necessità di usare solo una funzione o una classe di un modulo allora si può
-    usare la clausola from esplicitando quale funzione importare:
+- Se si ha necessità di usare solo una funzione o una classe di un modulo allora si può usare la clausola from esplicitando quale funzione importare:
     
     from math import sqrt
     
     print(sqrt(5))
     
--   Oppure si possono importare tutte le funzioni di un modulo con l'asterisco
+- Oppure si possono importare tutte le funzioni di un modulo con l'asterisco
     
     from math import *
     
