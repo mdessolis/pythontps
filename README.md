@@ -596,3 +596,41 @@ Se in una funzione abbiamo necessità di accedere ad una variabile esterna, biso
     count_primes += find_primes(range(10)) # stampa 2 3 5 7 e memorizza in count_primes il valore 4
     count_primes += find_primes(range(11,20)) # stampa 11 13 17 19 e memorizza in count_primes il valore 8
 
+### Passaggio di argomenti per riferimento o per valore ###
+
+In Python gli argomenti di una funzione sono passati automaticamente per riferimento se sono di tipo mutabile (quindi liste, dictionary, set o classi), mentre se sono di tipo immutabile non possono essere passati per valore in quanto una loro modifica creerebbe dei nuovi oggetti (vedi il paragrafo sulle variabili numeriche).
+
+Se si ha necessità di accedere per riferimento ad una variabile immutabile una possibile strategia potrebbe essere quella di inserirla all'interno di una variabile mutabile (ad esempio una lista) in modo che possa essere modificata senza problemi.
+
+    """
+    In questo esempio definiamo una funzione con un parametro v che, essendo una lista, sarà passato
+    per riferimento e la modifica dei suoi elementi si ripercuoterà anche alla variabile
+    dichiarata esternamente alla funzione
+    """
+    v = [5, 32, 27]
+    
+    def swap_first_last(v):
+        if len(v) > 0:
+            v[0], v[-1] = v[-1], v[0] # scambia primo e ultimo elemento della lista
+            
+    print(v) # mostrerà [27, 32, 5]
+    
+    """
+    In questo esempio la funzione riceve un parametro numerico che vogliamo
+    poter modificare. Abbiamo diversi modi per farlo:
+    """
+    # 1° metodo: sfruttare il return
+    def increment(x, limit):
+        return (x+1) % limit
+        
+    x = 5
+    x = increment(x, 10)
+    print(x) # mostrerà 6
+    
+    # 2* metodo: passare i parametri all'interno di una lista
+    def increment(param): 
+        param[0] = (param[0]+1) % param[1]
+    
+    x = [5, 10] # 5 è il numero da incrementare, 10 è il limite
+    increment(x)
+    print(x) # mostrerà [6, 10]
