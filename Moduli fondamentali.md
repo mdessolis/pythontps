@@ -40,6 +40,59 @@ Non tutti i moduli di Python sono disponibili immediatamente con l'installazione
 
     pip install numpy
 
+## math ##
+
+Il modulo math mette a disposizione diverse funzioni matematiche di base:
+
+- acos, acosh, asin, asinh, atan, atan2, atanh, cos, cosh, sin, sinh, tan, tanh: *funzioni trigonometriche*
+- ceil(x): *il più piccolo intero maggiore o uguale a x*
+- comb(n,k): *combinazioni di n elementi in classe k*
+- e: *esponenziale 2.718281828459045* 
+- exp(x): *e\**x*
+- factorial(x): *fattoriale di x*
+- floor(x): *il più grande intero minore o uguale a x*
+- fmod(x,y): *resto della divisione tra x e y, con x e y float*
+- fsum(\*x): *somma di valori float più precisa rispetto sum*
+- gcd(a,b): *massimo comun divisore tra a e b*
+- isclose(
+isfinite
+isinf
+isnan
+isqrt
+lcm
+log
+log10
+log1p
+log2
+modf
+nan
+nextafter
+perm
+pi
+pow
+prod
+radians
+remainder
+sqrt
+tau
+trunc
+ulp
+
 ## time ##
 
-La libreria time mette a disposizione alcune funzioni di accesso all'ora di sistema ed è molto comoda quindi per calcolare ad esempio i tempi di esecuzione di una funzione
+Il modulo time mette a disposizione alcune funzioni di accesso all'ora di sistema ed è molto comodo quindi per calcolare ad esempio i tempi di esecuzione di una funzione. Questo modulo fa parte dell'installazione di base di Python.
+
+    import time
+    
+    """
+    time() restituisce un valore float che rappresenta il numero di secondi trascorsi dal 1/1/1970 (Epoch)
+    
+    questa funzione è utile per calcolare ad esempio il tempo di esecuzione di una funzione
+    """
+    time.time()
+
+    # esempio
+    inizio = time.time()
+    calcolo()
+    tempo = time.time()-inizio
+    print (f"calcolo() ha impiegato {tempo:.2f} secondi")
