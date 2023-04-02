@@ -812,7 +812,7 @@ sum(iterable) restituisce la somma dei valori presenti in iterable
     Ad ogni elemento x di v viene applicato il calcolo (x-M)^2, vengono sommati tutti questi valori
     e successivamente divisi per il loro numero. Il risultato finale sarà la radice quadrata
     di questo valore medio.
-    Per rendere ancora più breve il codice è stata usata una funzione lamda (funzione anonima)
+    Per rendere ancora più breve il codice è stata usata una funzione lambda (funzione anonima)
     """
     def deviazione_standard(v):
         media = sum(v)/len(v)
