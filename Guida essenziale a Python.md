@@ -662,14 +662,14 @@ any(iterable) restituisce True se almeno un elemento dell'argomento è True.
     is_prime restituisce True se x è primo, False altrimenti
     """
     def is_prime(x):
-    if x<2:
-        return False
-    i=2
-    while i*i<=x:
-        if x%i==0:
-            return False
-        i +=1
-    return True
+       if x<2:
+           return False
+       i=2
+       while i*i<=x:
+           if x%i==0:
+               return False
+           i += 1
+       return True
 
     # Creiamo una lista con un valore bool per indicare se ciascun indice è primo o meno
     primi = list(is_prime(x) for x in range(100))
