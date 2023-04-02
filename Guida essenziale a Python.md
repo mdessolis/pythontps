@@ -722,7 +722,25 @@ enumerate(x) restituisce un oggetto di tipo enumerate partendo dalla sequenza x.
     list(abitanti) # mostra ['Milano', 'Genova', 'Napoli']
     
     list(enumerate(abitanti)) # mostra [(0, 'Milano'), (1, 'Genova'), (2, 'Napoli')]
+
+#### filter(funzione, iterable) ####
+
+filter(funzione, iterable) restituisce un nuovo iterable contenente gli elementi di quello passato come argomento che soddisfano la funzione booleana passata come primo argomento.
+
+E' una funzione molto usata perché consente di costruire delle istruzioni più compatte senza dover ricorrrere a cicli for o while.
+
+    def pari(x):
+        return abs(x)>1 and x%2 == 0
+        
+    list(filter(pari, range(100)) # genera una lista con i numeri pari minori di 100
     
+Nell'esempio appena visto la funzione range genera 100 numeri, filter applica a ciascuno la funzione pari e genera una lista con i soli valori in cui la funzione restituisce True. E' l'equivalente delle seguenti istruzioni:
+
+    elenco =[]
+    for i in range(100):
+        if pari(i):
+            elenco.append(i)        
+
 #### id(x) e type(x) ####
  
 id(x) restituisce un numero intero identificativo univoco di un oggetto. Controllare gli esempi di [Variabili numeriche](#variabili-numeriche) per chiarirne l'uso.
@@ -749,3 +767,97 @@ float(x) restituisce un valore float estratto dalla stringa x. x deve contenere 
     float("4.5") # restituisce 4.5
     float("4 5") # restituisce errore
     
+#### len(x) ####
+
+len(x) restituisce la dimensione di un oggetto in termini di numero di elementi.
+
+    list(x for x in range(1,1000) if x % 3 == 0) # genera una lista con i multipli di 3 minori di 1000
+    
+    [0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96, 99, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129, 132, 135, 138, 141, 144, 147, 150, 153, 156, 159, 162, 165, 168, 171, 174, 177, 180, 183, 186, 189, 192, 195, 198, 201, 204, 207, 210, 213, 216, 219, 222, 225, 228, 231, 234, 237, 240, 243, 246, 249, 252, 255, 258, 261, 264, 267, 270, 273, 276, 279, 282, 285, 288, 291, 294, 297, 300, 303, 306, 309, 312, 315, 318, 321, 324, 327, 330, 333, 336, 339, 342, 345, 348, 351, 354, 357, 360, 363, 366, 369, 372, 375, 378, 381, 384, 387, 390, 393, 396, 399, 402, 405, 408, 411, 414, 417, 420, 423, 426, 429, 432, 435, 438, 441, 444, 447, 450, 453, 456, 459, 462, 465, 468, 471, 474, 477, 480, 483, 486, 489, 492, 495, 498, 501, 504, 507, 510, 513, 516, 519, 522, 525, 528, 531, 534, 537, 540, 543, 546, 549, 552, 555, 558, 561, 564, 567, 570, 573, 576, 579, 582, 585, 588, 591, 594, 597, 600, 603, 606, 609, 612, 615, 618, 621, 624, 627, 630, 633, 636, 639, 642, 645, 648, 651, 654, 657, 660, 663, 666, 669, 672, 675, 678, 681, 684, 687, 690, 693, 696, 699, 702, 705, 708, 711, 714, 717, 720, 723, 726, 729, 732, 735, 738, 741, 744, 747, 750, 753, 756, 759, 762, 765, 768, 771, 774, 777, 780, 783, 786, 789, 792, 795, 798, 801, 804, 807, 810, 813, 816, 819, 822, 825, 828, 831, 834, 837, 840, 843, 846, 849, 852, 855, 858, 861, 864, 867, 870, 873, 876, 879, 882, 885, 888, 891, 894, 897, 900, 903, 906, 909, 912, 915, 918, 921, 924, 927, 930, 933, 936, 939, 942, 945, 948, 951, 954, 957, 960, 963, 966, 969, 972, 975, 978, 981, 984, 987, 990, 993, 996, 999]
+    
+    len(_) # restituisce il numero di elementi dell'ultimo risultato (_)
+    334
+ 
+#### map(funzione, iterable) ####
+
+map(funzione, iterable) applica a ogni elemento di iterable la funzione passata come primo parametro e restituisce un nuovo iterator
+
+Come per filter questa funzione è usata molto perché permette di abbreviare il codice.
+
+    import math
+    
+    list(map(math.sqrt, range(1,10))) # crea una lista con le radici quadrate dei numeri 1-9
+    
+    [1.0, 1.4142135623730951, 1.7320508075688772, 2.0, 2.23606797749979, 2.449489742783178, 2.6457513110645907, 2.8284271247461903, 3.0]
+    
+    # alternativa procedurale
+    elenco = []
+    for i in range(1,10):
+        elenco.append(math.sqrt(i))
+        
+#### max(iterable), min(iterable), sum(iterable) ####
+
+max(iterable) restituisce il valore massimo presente in iterable
+min(iterable) restituisce il valore minimo presente in iterable
+sum(iterable) restituisce la somma dei valori presenti in iterable
+
+    v = [3,1,5]
+    
+    max(v) # restituisce 5
+    min(v) # restituisce 1
+    sum(v) # restituisce 9
+    
+    """
+    Esempio più articolato: calcolo la deviazione standard di una serie di valori.
+    Ad ogni elemento x di v viene applicato il calcolo (x-M)^2, vengono sommati tutti questi valori
+    e successivamente divisi per il loro numero. Il risultato finale sarà la radice quadrata
+    di questo valore medio.
+    Per rendere ancora più breve il codice è stata usata una funzione lamda (funzione anonima)
+    """
+    def deviazione_standard(v):
+        media = sum(v)/len(v)
+        return math.sqrt(sum(map(lambda x: (x-media)**2, v))/len(v))
+        
+    # stessa funzione in modo semi-tradizionale:
+    def deviazione_standard(v):
+        media = sum(v)/len(v)
+        somma = 0
+        for x in v:
+            somma += (x-media)**2
+        somma /= len(v)
+        return math.sqrt(somma)
+
+#### sorted(iterable, key=None, reverse=False) ####
+
+sorted(iterable, key=None, reverse=False) restituisce l'iterable con gli elementi ordinati. Eventualmente si può aggiungere l'opzione reverse=True per inventire l'ordinamento, oppure il parametro key=funzione per definire una funzione con un parametro che estragga dal parametro l'elemento da confrontare.
+
+    v = [3,1,4]
+    
+    sorted(v) # restituisce [1,3,4]
+    
+    sorted(v, reverse=True) # restituisce [4,3,1]
+    
+    abitanti = {
+        "Milano": 2000000,
+        "Genova": 700000,
+        "Napoli": 1200000
+    }
+    sorted(abitanti) # restituisce l'elenco ordinato delle chiavi
+    ['Genova', 'Milano', 'Napoli']
+    
+    sorted(abitanti, key=lambda x: abitanti[x]) # restituisce l'elenco delle chiavi ordinate per popolazione
+    ['Genova', 'Napoli', 'Milano']
+    
+#### zip(*iterables) ####
+
+zip(\*iterables) produce un iteratore generando tante tuple composte di elementi presenti in ciascun elenco passato. Può essere utile quando si vogliono creare dei cicli su più liste in parallelo.
+
+    citta = ['BO', 'MI', 'NA']
+    abitanti = [650000, 2000000, 1200000]
+    
+    for c,a in zip(citta, abitanti):
+        print(f"{c} ha {a} abitanti")
+        
+    # oppure possiamo usare zip per trasformare due liste in un dictionary:
+    dict(zip(citta, abitanti))
+    {'BO': 650000, 'MI': 2000000, 'NA': 1200000}
