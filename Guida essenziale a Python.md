@@ -890,8 +890,8 @@ Notare inoltre nella definizione dei metodi il primo parametro obbligatorio **se
     import math
     
     class Punto:
-        x = 0
-        y = 0
+        x : float = 0 # l'annotazione float non è obbligatoria ma conveniente
+        y : float = 0
         
         def __init__(self, x=0, y=0):
             self.x = x
@@ -914,9 +914,9 @@ Ci sono casi in cui si vogliono gestire delle classi alla stregua dei record, co
 
     from dataclasses import dataclass
     
-    @dataclass
+    @dataclass # dataclass è un decorator che sarà associato alla classe successiva
     class Libro:
-        titolo : str
+        titolo : str # qui l'annotazione str è obbligatoria per poter far generare il costruttore
         autore : str
         editore: str
         genere : str
@@ -928,9 +928,36 @@ Ci sono casi in cui si vogliono gestire delle classi alla stregua dei record, co
     
     libro1.mostra() # mostra "Impariamo Python - F.C. - Mondadori - Informatica"
     
-    libro2 = Libro() # dà errore perché il costruttore attende 4 parametri
-
-        
+    print(libro2) # mostra "Libro(titolo='Impariamo Python', autore='F.C.', editore='Mondadori', genere='Informatica')"
     
+    libro2 = Libro() # dà errore perché il costruttore attende 4 parametri    
+    
+### Ereditarietà ###
+
+Per definire una classe ereditata si aggiunge il nome della classe genitore tra parentesi nella definizione della classe figlia:
+
+    @dataclass # uso il decorator dataclass per aggiungere in automatico il costruttore
+    class Persona:
+        """ definiamo una class Persona con soli 3 attributi """
+        nome: str
+        cognome: str
+        eta: int
+        
+        def get_nominativo(self):
+            return f"{self.nome} {self.cognome}"
+        
+    @dataclass
+    class Dipendente(Persona):
+        """ Dipendente riceve i 3 attributi di Persona e aggiunge incarico """
+        incarico: str
+        
+        def get_nominativo(self): # ridefiniamo il metodo per poter aggiungere l'incarico
+            return f"{self.nome} {self.cognome} - {self.incarico}"
+        
+    p1 = Persona("Giuseppe", "Tubi", 23)
+    p2 = Dipendente("Manlio", "Roversi", 25, "Addetto vendite")
+        
+    p1.get_nominativo() # restituisce la stringa "Giuseppe Tubi"
+    p2.get_nominativo() # restituisce la stringa "Manlio Roversi - Addetto vendite"
 
         
