@@ -28,6 +28,7 @@
    - [Funzioni](#funzioni)
       - [Passaggio di argomenti per riferimento o per valore](#passaggio-di-argomenti-per-riferimento-o-per-valore)
       - [Built-in functions](#built-in-functions)
+   - [Classi e Oggetti](#classi-e-oggetti)
 
 ## Introduzione
 
@@ -861,3 +862,75 @@ sorted(iterable, key=None, reverse=False) restituisce l'iterable con gli element
     # oppure possiamo usare zip per trasformare due liste in un dictionary:
     dict(zip(citta, abitanti))
     {'BO': 650000, 'MI': 2000000, 'NA': 1200000}
+
+## Classi e Oggetti ##
+
+Naturalmente anche Python prevede la programmazione ad oggetti e la definizione di classi personalizzate. Del resto tutte le variabili usate dal linguaggio sono memorizzate come oggetti e hanno quindi degli attributi e metodi ciascuna (vedere la funzione dir(oggetto)).
+
+Per definire una classe si usa la seguente sintassi:
+
+    class NomeClasse:
+        # elenco attributi 
+        attributo1 = valore
+        attributo2 = valore
+        ...
+        
+        #costruttore
+        def __init__(self):
+            ...
+            
+        def metodo1(self, parametri):
+            ...
+            
+Notare che per gli attributi non vi è distinzione tra pubblici e privati; sono tutti considerati pubblici e viene suggerito soltanto di preporre un carattere di underscore al nome per indicare quelli che si vuole considerare privati, ma comunque accessibili anche all'esterno della classe (è giusto una convenzione).
+
+Notare inoltre nella definizione dei metodi il primo parametro obbligatorio **self** che passa l'oggetto stesso alla funzione in modo che possa accedere agli altri elementi della classe (è l'equivalente del *this* di altri linguaggi).
+
+    """ Esempio: definiamo una classe Punto """
+    import math
+    
+    class Punto:
+        x = 0
+        y = 0
+        
+        def __init__(self, x=0, y=0):
+            self.x = x
+            self.y = y
+            
+        def distanza_da_origine(self):
+            return math.sqrt(self.x**2 + self.y**2)
+
+    
+    p1 = Punto()     # crea un oggetto Punto con coordinate (0,0)
+    p2 = Punto(3, 1) # crea un oggetto Punto con coordinate (3,1)
+    
+    print(p2.distanza_da_origine()) # restituisce 3.1622776601683795
+    
+    p2.x = 2         # cambiamo la coordinata x in 2
+    
+    print(p2.distanza_da_origine()) # restituisce 2.23606797749979
+
+Ci sono casi in cui si vogliono gestire delle classi alla stregua dei record, con quindi diversi attributi da inizializzare in fase di creazione dell'istanza. In questo caso può essere comodo ricorrere ad un modulo di python chiamato **dataclasses** che aggiunge automaticamente alla classe il costruttore con tutti i parametri da inizializzare.
+
+    from dataclasses import dataclass
+    
+    @dataclass
+    class Libro:
+        titolo : str
+        autore : str
+        editore: str
+        genere : str
+        
+        def mostra(self):
+            print(f"{self.titolo} - {self.autore} - {self.editore} - {self.genere}")
+            
+    libro1 = Libro("Impariamo Python", "F.C.", "Mondadori", "Informatica") # crea un oggetto Libro assegnando tutti gli attributi
+    
+    libro1.mostra() # mostra "Impariamo Python - F.C. - Mondadori - Informatica"
+    
+    libro2 = Libro() # dà errore perché il costruttore attende 4 parametri
+
+        
+    
+
+        
